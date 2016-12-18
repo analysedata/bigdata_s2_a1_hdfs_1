@@ -1,0 +1,20 @@
+Session 2, Assignment 1:
+
+# After starting all the daemons, I did the following:
+
+# Task 1:
+# List HDFS directories to see if directory exists
+hadoop fs -ls /user/acadgild/
+
+# Make directory hadoop in HDFS
+hadoop fs -mkdir /user/acadgild/hadoop
+
+# Task 2:
+# Create new empty file in HDFS
+hadoop fs -touchz /user/acadgild/hadoop/word-count.txt
+
+# Append text to file
+echo "Apache Hadoop is a framework for running applications on large cluster built of commodity hardware. The Hadoop framework transparently provides applications both reliability and data motion. Hadoop implements a computational paradigm named Map/Reduce, where the application is divided into many small fragments of work, each of which may be executed or re-executed on any node in the cluster. By https://wiki.apache.org/hadoop/FrontPage." | hadoop fs -appendToFile - /user/acadgild/hadoop/word-count.txt
+
+# Read from file
+hadoop fs -cat /user/acadgild/hadoop/word-count.txt
